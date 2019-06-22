@@ -1,28 +1,33 @@
+i = 1;
 
-i = 0;
-let images = ["img/52553778_2239802329411753_1615837192981541835_n.jpg", "img/53086310_309860299674285_6230656625640732532_n.jpg", "img/53238347_378266366340523_1975914855758364120_n.jpg", "img/photo_2019-02-04_22-28-37.jpg", "img/photo_2019-02-12_19-13-15.jpg"];
+let images = ["https://mirpozitiva.ru/uploads/posts/2016-09/medium/1474011210_15.jpg", "https://avatars.mds.yandex.net/get-pdb/195449/dd8d7db7-9d1c-4d3f-899d-1463a82f3887/s1200", "http://popugai-market.ru/images/8/8807.jpg", "http://www.goldenline.org/kittens/dream5.jpg"];
 
 let left = document.getElementById('left');
+
 let right = document.getElementById('right');
 
-right.addEventListener("click", function zamenaPhoto(){
+right.addEventListener("click", function zamenaPhoto1(){
 
 let photo = document.getElementById('photo');
 
-photo.src = images[i+1];
-i++;
-if (i>=4){
+photo.src = images[i];
+
+++i;
+
+if (i > 3){
+
 	i = 0;
 }
+console.log(i);
 });
 
-left.addEventListener("click", function zamenaPhoto(){
+left.addEventListener("click", function zamenaPhoto1(){
 
 let photo = document.getElementById('photo');
 
-photo.src = images[i+1];
-i++;
-if (i>=4){
-	i = 0;
-}
+photo.src = images[--i];
+	if (i<0) {
+		i=1;
+	}
+	console.log(i);
 });
